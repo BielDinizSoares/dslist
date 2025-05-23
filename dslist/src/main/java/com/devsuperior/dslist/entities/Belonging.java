@@ -13,14 +13,14 @@ public class Belonging {
     @EmbeddedId
     private BelongingPK id = new BelongingPK();
 
-    private Integer positiion;
+    private Integer position;
 
     public Belonging() {}
 
     public Belonging(Game game, GameList list, Integer positiion) {
         id.setGame(game);
         id.setList(list);
-        this.positiion = positiion;
+        this.position = position;
     }
 
     public BelongingPK getId() {
@@ -32,22 +32,22 @@ public class Belonging {
     }
 
     public Integer getPositiion() {
-        return positiion;
+        return position;
     }
 
-    public void setPositiion(Integer positiion) {
-        this.positiion = positiion;
+    public void setPositiion(Integer position) {
+        this.position = position;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Belonging belonging = (Belonging) o;
-        return Objects.equals(id, belonging.id) && Objects.equals(positiion, belonging.positiion);
+        return Objects.equals(id, belonging.id) && Objects.equals(position, belonging.position);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, positiion);
+        return Objects.hash(id, position);
     }
 }
